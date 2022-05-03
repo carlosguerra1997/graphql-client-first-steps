@@ -1,8 +1,9 @@
 import { gql, useQuery } from '@apollo/client'
 import { Persons } from './Persons'
 import './App.css'
+import { PersonForm } from './PersonForm'
 
-const ALL_PERSONS = gql`
+export const ALL_PERSONS = gql`
   query {
     allPersons {
       id
@@ -15,8 +16,6 @@ const ALL_PERSONS = gql`
 function App() {
   const { data, error, loading } = useQuery(ALL_PERSONS)
 
-  console.log(data)
-
   if (error) return <span style='color: red'> {error} </span> 
 
   return (
@@ -27,8 +26,8 @@ function App() {
             ? <p>Loading...</p>
             : <Persons persons={data?.allPersons} />
         }
-
       </header>
+      <PersonForm />
     </div>
   )
 }
