@@ -1,20 +1,11 @@
-import { gql, useQuery } from '@apollo/client'
-import { Persons } from './Persons'
 import './App.css'
-import { PersonForm } from './PersonForm'
 
-export const ALL_PERSONS = gql`
-  query {
-    allPersons {
-      id
-      name
-      phone
-    }
-  }
-`
+import { Persons } from './Persons'
+import { PersonForm } from './PersonForm'
+import { usePersons } from './persons/custom-hooks'
 
 function App() {
-  const { data, error, loading } = useQuery(ALL_PERSONS)
+  const { data, error ,loading } = usePersons()
 
   if (error) return <span style='color: red'> {error} </span> 
 
