@@ -12,3 +12,13 @@ mutation createPerson($name: String!, $street: String!, $city: String!, $phone: 
     }
   }
 }`
+
+export const EDIT_NUMBER = gql`
+  mutation EditNumber($name: String!, $phone: String!) {
+    editNumber(name: $name, phone: $phone) {
+      id
+      name
+      phone
+    }
+  }
+`

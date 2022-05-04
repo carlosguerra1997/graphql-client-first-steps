@@ -2,6 +2,8 @@ import './App.css'
 
 import { Persons } from './Persons'
 import { PersonForm } from './PersonForm'
+import { PhoneForm } from './PhoneForm'
+
 import { usePersons } from './persons/custom-hooks'
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
         }
       </header>
       <PersonForm />
+      <PhoneForm />
     </div>
   )
 }

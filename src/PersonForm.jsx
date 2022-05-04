@@ -8,7 +8,7 @@ export const PersonForm = () => {
   const [ city, setCity ] = useState('')
   const [ street, setStreet ] = useState('')
 
-  const createPerson = useAddPerson()
+  const [ createPerson, error ] = useAddPerson()
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -39,6 +39,7 @@ export const PersonForm = () => {
 
           <button>Add person</button>
         </form>
+        { error && error }
       </div>
     )
 }
