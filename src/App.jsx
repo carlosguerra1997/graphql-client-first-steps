@@ -1,28 +1,15 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { Persons } from './Persons'
-import { PersonForm } from './PersonForm'
-import { PhoneForm } from './PhoneForm'
-
-import { usePersons } from './persons/custom-hooks'
+import { Persons } from './components/Persons'
 
 function App() {
-  const { data, error ,loading } = usePersons()
-
-  if (error) return <span style='color: red'> {error} </span> 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        { 
-          loading 
-            ? <p>Loading...</p>
-            : <Persons persons={data?.allPersons} />
-        }
-      </header>
-      <PersonForm />
-      <PhoneForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path='/' element={ <Persons /> } />
+      </Routes>
+    </Router>
   )
 }
 

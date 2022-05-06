@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useAddPerson } from "./persons/custom-hooks";
+import { useAddPerson } from "../persons/custom-hooks";
 
 export const PersonForm = () => {
   const [ name, setName ] = useState('')

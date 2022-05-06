@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useEditPhone } from "./persons/custom-hooks";
+import { useEditPhone } from "../persons/custom-hooks";
 
 export const PhoneForm = () => {
   const [ name, setName ] = useState('')
