@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { useAddPerson } from "../persons/custom-hooks";
 
+import { Error } from "./error/Error";
+
 export const PersonForm = () => {
   const [ name, setName ] = useState('')
   const [ phone, setPhone ] = useState('')
@@ -24,6 +26,7 @@ export const PersonForm = () => {
     return (
       <div>
         <h2>Create new Person</h2>
+        { error && <Error error={error} /> }
         <form onSubmit={handleSubmit}>
           <label>Nombre</label>
           <input value={name} onChange={e => setName(e.target.value)} />
@@ -39,7 +42,6 @@ export const PersonForm = () => {
 
           <button>Add person</button>
         </form>
-        { error && error }
       </div>
     )
 }
